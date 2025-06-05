@@ -1,0 +1,10 @@
+---
+- block:
+  - import_tasks: provision-podman-rh.yml
+    when: ansible_os_family in ('RedHat')
+  - import_tasks: provision-podman-om.yml
+    when: ansible_os_family in ('OpenMandriva')
+  - import_tasks: provision-podman-deb.yml
+    when: ansible_os_family in ('Debian')
+
+...

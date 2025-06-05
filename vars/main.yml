@@ -1,0 +1,10 @@
+---
+podman_packages_rh:
+  - podman
+podman_packages_om:
+  - podman
+  - crun
+  - passt
+podman_packages_deb:
+  - podman
+...

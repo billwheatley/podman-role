@@ -1,0 +1,9 @@
+---
+- name: (Debian) Ensure Podman Packages are Present
+  apt:
+    update_cache: yes
+    pkg: "{{ podman_packages_deb }}"
+    state: present
+  become: True
+  become_user: root
+...

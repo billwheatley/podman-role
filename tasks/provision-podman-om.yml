@@ -1,0 +1,28 @@
+---
+- name: (OpenMandriva) Ensure Podman Packages are Present
+  dnf:
+    name: "{{ podman_packages_om }}"
+    state: present
+  become: True
+  become_user: root
+
+- name: "(OpenMandriva) Ensure User {{ item }} is added to the /etc/subgid"
+  ansible.builtin.lineinfile:
+    path: /etc/subgid
+    line: "{{ item }}:524288:65536"
+    create: yes
+    mode: '0644'
+  loop: "{{ users }}"
+  become: True
+  become_user: root
+
+- name: "(OpenMandriva) Ensure User {{ item }} is added to the /etc/subuid"
+  ansible.builtin.lineinfile:
+    path: /etc/subuid
+    line: "{{ item }}:524288:65536"
+    create: yes
+    mode: '0644'
+  loop: "{{ users }}"
+  become: True
+  become_user: root
+...
