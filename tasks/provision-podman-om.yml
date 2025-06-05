@@ -6,7 +6,7 @@
   become: True
   become_user: root
 
-- name: "(OpenMandriva) Ensure User {{ item }} is added to the /etc/subgid"
+- name: "(OpenMandriva) Ensure users are added to the /etc/subgid"
   ansible.builtin.lineinfile:
     path: /etc/subgid
     line: "{{ item }}:524288:65536"
@@ -16,7 +16,7 @@
   become: True
   become_user: root
 
-- name: "(OpenMandriva) Ensure User {{ item }} is added to the /etc/subuid"
+- name: "(OpenMandriva) Ensure users are added to the /etc/subuid"
   ansible.builtin.lineinfile:
     path: /etc/subuid
     line: "{{ item }}:524288:65536"
