@@ -1,8 +1,6 @@
 podman-role
 =========
 
-**NOTICE: THIS IS Work In Progress at the moment**
-
 Ansible Role to install and configure Podman in rootless mode.
 
 This was mostly created for OpenMandriva as simple `dnf install podman` does not bring in all dependencies or the rootless config like fedora or Debian does.
